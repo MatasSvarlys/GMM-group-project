@@ -21,4 +21,4 @@ pip install .
 --opdir is where you will unzip the data to
 
 ## for making into a db 
-`python ./fairchem/src/fairchem/core/scripts/preprocess_ef.py --data-path ./data/oc22_uncompressed/ --out-path ./data/oc22_lmdb/ --num-workers 8`
+`py ./fairchem/src/fairchem/core/scripts/preprocess_ef.py --data-path ./data/oc22_uncompressed/ --out-path ./data/oc22_lmdb/ --num-workers 8`

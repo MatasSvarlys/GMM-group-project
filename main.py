@@ -16,24 +16,13 @@ model_name = 'GemNet-OC-S2EFS-OC20+OC22'
 checkpoint_path = model_name_to_local_file(model_name, local_cache='./fairchem_checkpoints/')
 print(checkpoint_path)
 
-calc = FAIRChemCalculator(checkpoint_path=checkpoint_path, device="cpu", task_name="oc20")
+# calc = FAIRChemCalculator(checkpoint_path='./fairchem_checkpoints/gnoc_oc22_oc20_all_s2ef.pt', device="cpu", task_name="oc20")
 
-# read the data into an lmdb
+# get the data into an lmdb
 
-from argparse import Namespace
-from fairchem.scripts.dataset import preprocess_ef
-
-args = Namespace(
-    input_path="/data/oc22_uncompressed",
-    output_path="/data/oc22_lmdb",
-    task="s2ef",
-    dataset="oc22",
-    num_workers=8,
-    val_split=None,  # Optional: add validation split
-    train_size=None  # Optional: for subset
-)
-
-preprocess_ef.main(args)
+from fairchem.core.scripts.download_data import get_data
+ 
+get_data(datadir='./data', task='s2ef', split='200k', del_intmd_files=True)
 
 
 # train the model

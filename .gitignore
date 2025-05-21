@@ -3,3 +3,4 @@
 /.pytest_cache
 /fairchem_checkpoints
 /15
+/.venv
