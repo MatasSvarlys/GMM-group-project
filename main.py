@@ -44,15 +44,17 @@ dataset = OC22LmdbDataset(
 
 # train the model
 
-from fairchem.core.trainers import OCPTrainer
+# from fairchem.core.trainers import OCPTrainer
+from omegaconf import OmegaConf
 
-trainer = OCPTrainer(
-    
-)
+config_path = "./configs/oc20/s2ef/200k/gemnet/gemnet-oc.yml"
+
+cfg = OmegaConf.load(config_path)
 
 
+from fairchem.core._cli import runner_wrapper
 
-# evaluate the model
+# this will train and evaluate given the right config
+runner_wrapper(cfg)
 
-# show the results
 
