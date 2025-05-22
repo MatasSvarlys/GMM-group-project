@@ -4,3 +4,5 @@
 /fairchem_checkpoints
 /15
 /.venv
+/outputs
+/run.yml
