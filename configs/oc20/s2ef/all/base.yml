@@ -1,4 +1,4 @@
-trainer: ocp
+trainer: Fine_tuner_OCP
 
 dataset:
   train:
